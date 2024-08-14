@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: white;
+}
+body {
+    background-color: #333333f2;
+}
+.title {
+    margin: 20px auto;
+    width: 350px;
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.player {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.player p {
+    text-align: center;
+    padding-bottom: 10px;
+}
+.player button {
+    padding: 10px 30px;
+    text-align: center;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    background-color: #03a9f4;
+    outline: none;
+}
+
+.gameBoard {
+    margin: 50px auto;
+    background-color: #333333f2 ;
+    width: 350px;
+    height: 350px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    border: 2px solid black;
+}
+.gameBoard div {
+    cursor: pointer;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.gameBoard div p {
+    position: absolute;
+    font-size: 50px;
+    color: white;
+}
+.menu {
+    margin:auto;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.menu button,
+.startMenu div:nth-child(1) button,
+.startMenu div:nth-child(2) button {
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    background-color: #333333f2;
+    z-index: 1;
+}
+.menu h2,
+.menu h3 {
+    margin-bottom: 20px;
+    display: none;
+}
+
+.menu button::after {
+    content: "";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transition: 0.4s;
+}
+.menu .start::after {
+    background-color: #03a9f4;
+}
+.menu .options::after{
+    background-color: #e91e63;
+}
+.menu button:hover::after {
+    width: 100%;
+}
+.startMenu {
+    background-color: #333333;
+    border: 2px solid black;
+    width: 800px;
+    height: 650px;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    display: none;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    padding: 30px;
+}
+.startMenu div > * {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.startMenu div:first-child button {
+    background-color: #03a9f4;
+}
+.startMenu div:nth-child(2) button {
+    background-color: #e91e63;
+}
+.startMenu div i {
+    padding-left: 10px;
+}
+.startBtn {
+    position: absolute;
+    width: 300px;
+    padding: 20px;
+    border: 4px solid black;
+    background-color: #333333;
+    font-size: 1.2rem;
+    cursor: pointer;
+    top: 45%;
+}
+.midGameMenu  {
+    display: none;
+}
+.menu h3 span:first-child {
+    color: #03a9f4;
+}
+.menu h3 span:last-child {
+    color: #e91e63;
+}
+.xWin,
+.oWin {
+    display: none;
+}
